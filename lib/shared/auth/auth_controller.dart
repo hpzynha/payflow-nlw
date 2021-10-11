@@ -1,5 +1,3 @@
-// ignore_for_file: unused_field
-
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/models/user_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,7 +11,7 @@ class AuthController {
     if (user != null) {
       saveUser(user);
       _user = user;
-      Navigator.pushReplacementNamed(context, "/home");
+      Navigator.pushReplacementNamed(context, "/home", arguments: user);
     } else {
       Navigator.pushReplacementNamed(context, "/login");
     }

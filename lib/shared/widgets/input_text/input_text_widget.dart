@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
+
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 
 class InputTextWidget extends StatelessWidget {
   final String label;
   final IconData icon;
-  final String? initialValue;
+  final String? initalValue;
   final String? Function(String?)? validator;
   final TextEditingController? controller;
   final void Function(String value) onChanged;
-
   const InputTextWidget(
       {Key? key,
       required this.label,
       required this.icon,
-      this.initialValue,
+      required this.onChanged,
+      this.initalValue,
       this.validator,
-      this.controller,
-      required this.onChanged})
+      this.controller})
       : super(key: key);
 
   @override
@@ -28,9 +28,9 @@ class InputTextWidget extends StatelessWidget {
         children: [
           TextFormField(
             controller: controller,
-            onChanged: onChanged,
-            initialValue: initialValue,
+            initialValue: initalValue,
             validator: validator,
+            onChanged: onChanged,
             style: TextStyles.input,
             decoration: InputDecoration(
                 contentPadding: EdgeInsets.zero,
