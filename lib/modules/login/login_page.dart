@@ -63,7 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                         const EdgeInsets.only(top: 40, left: 40, right: 40),
                     child: SocialLoginButton(
                       onTap: () {
-                        controller.googleSignIn(context);
+                        Navigator.pushNamed(context, "/home");
+                        // controller.googleSignIn(context);
                       },
                     ),
                   )

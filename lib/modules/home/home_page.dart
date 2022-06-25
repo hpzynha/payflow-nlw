@@ -7,8 +7,8 @@ import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 
 class HomePage extends StatefulWidget {
-  final UserModel user;
-  const HomePage({Key? key, required this.user}) : super(key: key);
+  final UserModel? user;
+  const HomePage({Key? key, this.user}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -33,7 +33,8 @@ class _HomePageState extends State<HomePage> {
                     style: TextStyles.titleRegular,
                     children: [
                       TextSpan(
-                          text: "${widget.user.name}",
+                          text: 'Lari',
+                          // text: "${widget.user.name}",
                           style: TextStyles.titleBoldBackground)
                     ]),
               ),
@@ -45,10 +46,12 @@ class _HomePageState extends State<HomePage> {
                 height: 48,
                 width: 48,
                 decoration: BoxDecoration(
-                    color: Colors.black,
-                    borderRadius: BorderRadius.circular(5),
-                    image: DecorationImage(
-                        image: NetworkImage(widget.user.photoURL!))),
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(5),
+                  // image: DecorationImage(
+                  //   image: NetworkImage(widget.user.photoURL!),
+                  // ),
+                ),
               ),
             ),
           ),
